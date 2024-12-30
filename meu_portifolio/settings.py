@@ -127,3 +127,13 @@ JAZZMIN_SETTINGS = {
         {"name": "Ver Site", "url": "http://127.0.0.1:8000/", "icon": "fa fa-eye", "new_window": True},
     ],
 }
+
+ADMIN_EMAIL = 'muquissicarlos@gmail.com'  # Configure o e-mail do admin aqui
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'muquissicarlos@gmail.com'  # Seu endereço de email
+EMAIL_HOST_PASSWORD = 'uruj ywep dyee sfmg'  # Substitua com a senha de aplicativo gerada
+DEFAULT_FROM_EMAIL = 'muquissicarlos@gmail.com'

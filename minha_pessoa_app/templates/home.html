@@ -9,7 +9,7 @@
   <meta name="description" content="Bentofolio - Bootstrap Personal Portfolio Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.svg' %}">
   <!-- Place favicon.ico in the root directory -->
 
   <!-- CSS here -->
@@ -105,7 +105,7 @@
                         d="M15.6663 3C15.8863 3.09333 16.0997 3.18083 16.3063 3.2625C16.5098 3.34882 16.6706 3.51241 16.7534 3.71729C16.8362 3.92217 16.8343 4.15155 16.748 4.355L14.833 8.83334"
                         stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    Trabalhos
+                    Projectos
                   </a>
                 </li>
                 <li class="nav-item">
@@ -122,7 +122,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">
+                  <a class="nav-link" href="{% url 'contactar' %}">
                     <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66699 5.5H12.3337" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                       <path d="M5.66699 8.8335H10.667" stroke-width="1.4" stroke-linecap="round"
@@ -179,7 +179,7 @@
 
                   </span>
                 </button>
-                <a href="contact.html" class="lets-talk-btn">
+                <a href="{% url 'contactar' %}" class="lets-talk-btn">
                     Vamos Conversar
                     <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -292,7 +292,7 @@
                                   <img src="{{ profissional.imagem.url }}" alt="figma">
                                 </div>
                                 <div class="text">
-                                  <h4 class="title">Figma</h4>
+                                  <h4 class="title">{{ profissional.nome }}</h4>
                                 </div>
                               </div>
                             </div>
@@ -323,7 +323,7 @@
                     </h3>
                     <div class="projects-main mt-24">
                       <div class="row g-4 parent-container">
-                        {% for projeto in projectos %}
+                        {% for projeto in projectos|slice:":2" %}
                       <div class="col-lg-12">
                         <div class="project-item">
                           <div class="image">
@@ -416,7 +416,7 @@
                       <h3 class="card-title">Vamos👋
                         <span class="d-block">Trabalhar Juntos</span>
                       </h3>
-                      <a class="link-btn" href="contact.html"> Vamos Conversar
+                      <a class="link-btn" href="{% url 'contactar' %}"> Vamos Conversar
                         <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path d="M17.5 11.6665V6.6665H12.5" stroke-width="1.5" stroke-linecap="round"
@@ -456,7 +456,7 @@
     <footer class="footer-area">
         <div class="container">
           <div class="text text-center">
-            <p>@ Carlos Muquissi 2024, Design por <a href="index.html#">Carlos Muquissi</a></p>
+            <p>@ Carlos Muquissi 2024, Design por <a href="#">Carlos Muquissi</a></p>
           </div>
         </div>
       </footer>

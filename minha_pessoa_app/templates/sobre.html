@@ -9,7 +9,7 @@
   <meta name="description" content="Bentofolio - Bootstrap Personal Portfolio Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.svg' %}">
  
   <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/fontawsome/css/all.min.css' %}">
@@ -102,7 +102,7 @@
                         d="M15.6663 3C15.8863 3.09333 16.0997 3.18083 16.3063 3.2625C16.5098 3.34882 16.6706 3.51241 16.7534 3.71729C16.8362 3.92217 16.8343 4.15155 16.748 4.355L14.833 8.83334"
                         stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    Trabalhos
+                    Projectos
                   </a>
                 </li>
                 <li class="nav-item">
@@ -119,7 +119,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">
+                  <a class="nav-link" href="{% url 'contactar' %}">
                     <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66699 5.5H12.3337" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                       <path d="M5.66699 8.8335H10.667" stroke-width="1.4" stroke-linecap="round"
@@ -176,7 +176,7 @@
 
                   </span>
                 </button>
-                <a href="contact.html" class="lets-talk-btn">
+                <a href="{% url 'contactar' %}" class="lets-talk-btn">
                     Vamos Conversar
                     <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -263,15 +263,15 @@
                     <div class="counter-area">
                         <div class="counter">
                             <div class="counter-item">
-                                <h3 class="number">40+</h3>
+                                <h3 class="number">5+</h3>
                                 <p class="subtitle">Anos de Experiência</p>
                             </div>
                             <div class="counter-item">
-                                <h3 class="number">86+</h3>
+                                <h3 class="number">20+</h3>
                                 <p class="subtitle">Projetos Concluídos</p>
                             </div>
                             <div class="counter-item">
-                                <h3 class="number">72+</h3>
+                                <h3 class="number">30+</h3>
                                 <p class="subtitle">Clientes Satisfeitos</p>
                             </div>
                         </div>
@@ -343,7 +343,7 @@
                     </div>
                   </div>
                   <div class="client-feedback">
-                    <h2 class="main-common-title">Confiado por Mais de 1200 Clientes</h2>
+                    <h2 class="main-common-title">Confiado por Mais de 40 Clientes</h2>
                     <div class="row client-feedback-slider">
                       <div class="col-lg-6">
                         <div class="feedback-item">
@@ -371,7 +371,7 @@
                             </p>
                           </div>
                           <div class="designation">
-                            <p><span>Oliver Clain</span> - Designer de Produto</p>
+                            <p><span>Soares</span> - Programador</p>
                           </div>
                         </div>
                       </div>
@@ -401,7 +401,7 @@
                             </p>
                           </div>
                           <div class="designation">
-                            <p><span>Oliver Clain</span> - Designer de Produto</p>
+                            <p><span>Joao Francisco</span> - Designer de Produto</p>
                           </div>
                         </div>
                       </div>
@@ -431,7 +431,7 @@
                             </p>
                           </div>
                           <div class="designation">
-                            <p><span>Oliver Clain</span> - Designer de Produto</p>
+                            <p><span>Rossana Costa</span> - Tecnica de rede</p>
                           </div>
                         </div>
                       </div>
@@ -618,57 +618,25 @@
                     <h2 class="main-common-title">Artigos e Publicações</h2>
                     <div class="article-publications-main">
                         <div class="row article-publications-slider">
+                            {% for blogs in blog  %}
                             <div class="col-lg-6">
-                                <div class="article-publications-item">
-                                    <div class="image">
-                                        <a href="article.html" class="d-block w-100">
-                                            <img src="{% static 'assets/img/blog/blog-img-1.jpg' %}" alt="blog-img-1" class="img-fluid w-100">
-                                        </a>
-                                        <a href="article.html" class="tags">Desenvolvimento</a>
-                                    </div>
-                                    <div class="text">
-                                        <a href="article.html" class="title">Quer melhorar seu cérebro? Pare de fazer essas 7 coisas</a>
-                                        <ul class="list-unstyled">
-                                            <li>15 min de leitura</li>
-                                            <li>6 Nov, 2023</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="article-publications-item">
-                                    <div class="image">
-                                        <a href="article.html" class="d-block w-100">
-                                            <img src="{% static 'assets/img/blog/blog-img-2.jpg' %}" alt="blog-img-2" class="img-fluid w-100">
-                                        </a>
-                                        <a href="article.html" class="tags">Desenvolvimento</a>
-                                    </div>
-                                    <div class="text">
-                                        <a href="article.html" class="title">Quer melhorar seu cérebro? Pare de fazer essas 7 coisas</a>
-                                        <ul class="list-unstyled">
-                                            <li>15 min de leitura</li>
-                                            <li>6 Nov, 2023</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="article-publications-item">
-                                    <div class="image">
-                                        <a href="article.html" class="d-block w-100">
-                                            <img src="{% static 'assets/img/blog/blog-img-3.jpg' %}" alt="blog-img-3" class="img-fluid w-100">
-                                        </a>
-                                        <a href="article.html" class="tags">Desenvolvimento</a>
-                                    </div>
-                                    <div class="text">
-                                        <a href="article.html" class="title">Quer melhorar seu cérebro? Pare de fazer essas 7 coisas</a>
-                                        <ul class="list-unstyled">
-                                            <li>15 min de leitura</li>
-                                            <li>6 Nov, 2023</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                              <div class="article-publications-item">
+                                  <div class="image">
+                                      <a href="article.html" class="d-block w-100">
+                                          <img src="{{ blogs.imagem.url }}" alt="blog-img-1" class="img-fluid w-100">
+                                      </a>
+                                      <a href="{% url 'detalhe_blog' id=blogs.id %}" class="tags">Desenvolvimento</a>
+                                  </div>
+                                  <div class="text">
+                                      <a href="{% url 'detalhe_blog' id=blogs.id %}" class="title">{{blogs.titulo}}</a>
+                                      <ul class="list-unstyled">
+                                          <li>15 min de leitura</li>
+                                          <li>{{blogs.data_publicacao}}</li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -676,12 +644,12 @@
                   <div class="work-together-slider">
                     <div class="slider-main d-flex gap-4 align-items-center">
                         <div class="slider-item">
-                            <a href="contact.html">Vamos 👋 Trabalhar Juntos</a>
-                            <a href="contact.html">Vamos 👋 Trabalhar Juntos</a>
+                            <a href="{% url 'contactar' %}">Vamos 👋 Trabalhar Juntos</a>
+                            <a href="{% url 'contactar' %}">Vamos 👋 Trabalhar Juntos</a>
                         </div>
                         <div class="slider-item">
-                            <a href="contact.html">Vamos 👋 Trabalhar Juntos</a>
-                            <a href="contact.html">Vamos 👋 Trabalhar Juntos</a>
+                            <a href="{% url 'contactar' %}">Vamos 👋 Trabalhar Juntos</a>
+                            <a href="{% url 'contactar' %}">Vamos 👋 Trabalhar Juntos</a>
                         </div>
                     </div>
                 </div>
@@ -696,16 +664,16 @@
       <!-- background shape area start -->
       <div class="background-shapes">
         <div class="shape-1 common-shape">
-          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+          <img src="{% static 'assets/img/bg/banner-shape-1.png' %}" alt="banner-shape-1">
         </div>
         <div class="shape-2 common-shape">
-          <img src="assets/img/bg/banner-shape-1.png" alt="banner-shape-1">
+          <img src="{% static 'assets/img/bg/banner-shape-1.png' %}" alt="banner-shape-1">
         </div>
         <div class="threed-shape-1 move-with-cursor" data-value="1">
-          <img src="assets/img/bg/object-3d-1.png" alt="object-3d-1">
+          <img src="{% static 'assets/img/bg/object-3d-1.png' %}" alt="object-3d-1">
         </div>
         <div class="threed-shape-2 move-with-cursor" data-value="1">
-          <img src="assets/img/bg/object-3d-2.png" alt="object-3d-2">
+          <img src="{% static 'assets/img/bg/object-3d-2.png' %}" alt="object-3d-2">
         </div>
       </div>
       <!-- background shape area end -->
@@ -716,7 +684,7 @@
     <footer class="footer-area">
         <div class="container">
           <div class="text text-center">
-            <p>@ Carlos Muquissi 2024, Design por <a href="index.html#">Carlos Muquissi</a></p>
+            <p>@ Carlos Muquissi 2024, Design por <a href="#">Carlos Muquissi</a></p>
           </div>
         </div>
     </footer>

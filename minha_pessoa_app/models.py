@@ -35,9 +35,19 @@ class Artigo(models.Model):
     def __str__(self):
         return self.titulo
 
+
+class Blog(models.Model):
+    titulo = models.CharField(max_length=200)
+    conteudo = models.TextField()
+    data_publicacao = models.DateField(auto_now_add=True)
+    imagem = models.ImageField(upload_to='blog_images/', blank=True, null=True)
+
+    def __str__(self):
+        return self.titulo
+
 # Modelo para Comentários
 class Comentario(models.Model):
-    artigo = models.ForeignKey(Artigo, on_delete=models.CASCADE, related_name='comentarios')
+    artigo = models.ForeignKey(Blog, on_delete=models.DO_NOTHING, related_name='comentarios')
     nome = models.CharField(max_length=100)
     email = models.EmailField()
     texto = models.TextField()
@@ -46,6 +56,8 @@ class Comentario(models.Model):
 
     def __str__(self):
         return f'Comentário de {self.nome} em {self.artigo}'
+
+
 
 # Modelo para Redes Sociais
 class RedeSocial(models.Model):
@@ -70,14 +82,7 @@ class Projeto(models.Model):
         return self.titulo
 
 
-class Blog(models.Model):
-    titulo = models.CharField(max_length=200)
-    conteudo = models.TextField()
-    data_publicacao = models.DateField(auto_now_add=True)
-    imagem = models.ImageField(upload_to='blog_images/', blank=True, null=True)
 
-    def __str__(self):
-        return self.titulo
 
 class Disponibilidade(models.Model):
     disponivel = models.BooleanField(default=True)
@@ -156,3 +161,13 @@ class PremioReconhecimento(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Contactar(models.Model):
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+    assunto = models.CharField(max_length=200)
+    mensagem = models.TextField()
+    data_criacao = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.nome} - {self.assunto}'

@@ -84,3 +84,13 @@ class MarcaAdmin(admin.ModelAdmin):
 class PremioReconhecimentoAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'descricao', 'data_recebimento')
     search_fields = ('titulo', 'descricao')
+
+
+from .models import Contactar
+
+class ContactarAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'email', 'assunto', 'mensagem')  # Campos a serem exibidos na lista
+    search_fields = ('nome', 'email', 'assunto')  # Campos pesquisáveis
+    list_filter = ('assunto',)  # Filtros para o Admin
+
+admin.site.register(Contactar, ContactarAdmin)

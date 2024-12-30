@@ -9,7 +9,7 @@
   <meta name="description" content="Bentofolio - Bootstrap Personal Portfolio Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.svg' %}">
   <!-- Place favicon.ico in the root directory -->
 
   <!-- CSS here -->
@@ -104,7 +104,7 @@
                         d="M15.6663 3C15.8863 3.09333 16.0997 3.18083 16.3063 3.2625C16.5098 3.34882 16.6706 3.51241 16.7534 3.71729C16.8362 3.92217 16.8343 4.15155 16.748 4.355L14.833 8.83334"
                         stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    Trabalhos
+                    Projectos
                   </a>
                 </li>
                 <li class="nav-item">
@@ -121,7 +121,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">
+                  <a class="nav-link" href="{% url 'contactar' %}">
                     <svg class="nav-icon" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.66699 5.5H12.3337" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
                       <path d="M5.66699 8.8335H10.667" stroke-width="1.4" stroke-linecap="round"
@@ -178,7 +178,7 @@
 
                   </span>
                 </button>
-                <a href="contact.html" class="lets-talk-btn">
+                <a href="{% url 'contactar' %}" class="lets-talk-btn">
                     Vamos Conversar
                     <svg class="icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
@@ -259,150 +259,27 @@
                   <div class="article-publications article-area">
                     <div class="article-publications-main">
                       <div class="row">
-                        <div class="col-xl-6 col-lg-4 col-md-6">
-                          <div class="article-publications-item">
-                            <div class="image">
-                              <a href="article.html" class="d-block w-100">
-                                <img src="{% static 'assets/img/blog/blog-img-1.jpg' %}" alt="blog-img-1" class="img-fluid w-100">
-                              </a>
-                              <a href="article.html" class="tags">Desenvolvimento</a>
-                            </div>
-                            <div class="text">
-                              <a href="article.html" class="title">Quer Melhorar Seu Cérebro? Pare de Fazer Essas 7 Coisas</a>
-                              <ul class="list-unstyled">
-                                <li>15 minutos de leitura</li>
-                                <li>6 de nov, 2023</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div class="col-xl-6 col-lg-4 col-md-6">
-                          <div class="article-publications-item">
-                            <div class="image">
-                              <a href="article.html" class="d-block w-100">
-                                <img src="{% static 'assets/img/blog/blog-img-2.jpg' %}" alt="blog-img-2" class="img-fluid w-100">
-                              </a>
-                              <a href="article.html" class="tags">Desenvolvimento</a>
-                            </div>
-                            <div class="text">
-                              <a href="article.html" class="title">Quer Melhorar Seu Cérebro? Pare de Fazer Essas 7 Coisas</a>
-                              <ul class="list-unstyled">
-                                <li>15 minutos de leitura</li>
-                                <li>6 de nov, 2023</li>
-                              </ul>
+                        {% for blogs in blog %}
+                          <div class="col-xl-6 col-lg-4 col-md-6">
+                            <div class="article-publications-item">
+                              <div class="image">
+                                <a href="article.html" class="d-block w-100">
+                                  <img src="{{ blogs.imagem.url }}" alt="blog-img-1" class="img-fluid w-100">
+                                </a>
+                                <a href="#" class="tags">Desenvolvimento</a>
+                              </div>
+                              <div class="text">
+                                <a href="{% url 'detalhe_blog' id=blogs.id %}" class="title">{{blogs.titulo}}</a>
+                                <ul class="list-unstyled">
+                                  <li>15 minutos de leitura</li>
+                                  <li>{{blogs.data_publicacao}}</li>
+                                </ul>
+                              </div>
                             </div>
                           </div>
-                        </div>
-            
-                        <div class="col-xl-6 col-lg-4 col-md-6">
-                          <div class="article-publications-item">
-                            <div class="image">
-                              <a href="article.html" class="d-block w-100">
-                                <img src="{% static 'assets/img/blog/blog-img-3.jpg' %}" alt="blog-img-3" class="img-fluid w-100">
-                              </a>
-                              <a href="article.html" class="tags">Desenvolvimento</a>
-                            </div>
-                            <div class="text">
-                              <a href="article.html" class="title">Quer Melhorar Seu Cérebro? Pare de Fazer Essas 7 Coisas</a>
-                              <ul class="list-unstyled">
-                                <li>15 minutos de leitura</li>
-                                <li>6 de nov, 2023</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-            
-                        <div class="col-xl-6 col-lg-4 col-md-6">
-                          <div class="article-publications-item">
-                            <div class="image">
-                              <a href="article.html" class="d-block w-100">
-                                <img src="{% static 'assets/img/blog/blog-img-4.jpg' %}" alt="blog-img-4" class="img-fluid w-100">
-                              </a>
-                              <a href="article.html" class="tags">Desenvolvimento</a>
-                            </div>
-                            <div class="text">
-                              <a href="article.html" class="title">Quer Melhorar Seu Cérebro? Pare de Fazer Essas 7 Coisas</a>
-                              <ul class="list-unstyled">
-                                <li>15 minutos de leitura</li>
-                                <li>6 de nov, 2023</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-            
-                        <div class="col-xl-6 col-lg-4 col-md-6">
-                          <div class="article-publications-item">
-                            <div class="image">
-                              <a href="article.html" class="d-block w-100">
-                                <img src="{% static 'assets/img/blog/blog-img-5.jpg' %}" alt="blog-img-5" class="img-fluid w-100">
-                              </a>
-                              <a href="article.html" class="tags">Desenvolvimento</a>
-                            </div>
-                            <div class="text">
-                              <a href="article.html" class="title">Quer Melhorar Seu Cérebro? Pare de Fazer Essas 7 Coisas</a>
-                              <ul class="list-unstyled">
-                                <li>15 minutos de leitura</li>
-                                <li>6 de nov, 2023</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-            
-                        <div class="col-xl-6 col-lg-4 col-md-6">
-                          <div class="article-publications-item">
-                            <div class="image">
-                              <a href="article.html" class="d-block w-100">
-                                <img src="{% static 'assets/img/blog/blog-img-6.jpg' %}" alt="blog-img-6" class="img-fluid w-100">
-                              </a>
-                              <a href="article.html" class="tags">Desenvolvimento</a>
-                            </div>
-                            <div class="text">
-                              <a href="article.html" class="title">Quer Melhorar Seu Cérebro? Pare de Fazer Essas 7 Coisas</a>
-                              <ul class="list-unstyled">
-                                <li>15 minutos de leitura</li>
-                                <li>6 de nov, 2023</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
+                        {% endfor %}
                       </div>
                     </div>
-                  </div>
-            
-                  <div class="pagination">
-                    <ul class="list-unstyled">
-                      <li class="prev">
-                        <button>
-                          <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18">
-                            </path>
-                          </svg>
-                        </button>
-                      </li>
-                      <li><button>1</button></li>
-                      <li><button>2</button></li>
-                      <li><button>3</button></li>
-                      <li>
-                        <button class="next-page-btn">
-                          <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
-                          <span class="next-page">Próximas 4 páginas</span>
-                        </button>
-                      </li>
-                      <li><button>100</button></li>
-                      <li class="next">
-                        <button>
-                          <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3">
-                            </path>
-                          </svg>
-                        </button>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -431,11 +308,10 @@
     </main>
     <!-- main area part end -->
 
-    <!-- footer part start -->
     <footer class="footer-area">
       <div class="container">
         <div class="text text-center">
-          <p>@ Carlos Muquissi 2024, Design por <a href="index.html#">Carlos Muquissi</a></p>
+          <p>@ Carlos Muquissi 2024, Design por <a href="#">Carlos Muquissi</a></p>
         </div>
       </div>
     </footer>
