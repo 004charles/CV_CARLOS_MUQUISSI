@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-**ib08cgzftb74&cmjl3euu$vv+m$rwe2ss47@o$=xpmu4^1z-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -137,3 +138,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'muquissicarlos@gmail.com'  # Seu endereço de email
 EMAIL_HOST_PASSWORD = 'uruj ywep dyee sfmg'  # Substitua com a senha de aplicativo gerada
 DEFAULT_FROM_EMAIL = 'muquissicarlos@gmail.com'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
