@@ -13,7 +13,6 @@ SECRET_KEY = 'django-insecure-**ib08cgzftb74&cmjl3euu$vv+m$rwe2ss47@o$=xpmu4^1z-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 ALLOWED_HOSTS = ["*"]
 
 
@@ -139,4 +138,4 @@ EMAIL_HOST_USER = 'muquissicarlos@gmail.com'  # Seu endereço de email
 EMAIL_HOST_PASSWORD = 'uruj ywep dyee sfmg'  # Substitua com a senha de aplicativo gerada
 DEFAULT_FROM_EMAIL = 'muquissicarlos@gmail.com'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
