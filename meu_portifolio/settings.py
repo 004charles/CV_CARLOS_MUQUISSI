@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-**ib08cgzftb74&cmjl3euu$vv+m$rwe2ss47@o$=xpmu4^1z-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 
@@ -107,6 +107,16 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+<<<<<<< HEAD
+=======
+
+# Direção dos arquivos estáticos (CSS, JS)
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+>>>>>>> 8de6a62 (quarta feira, ar)
 
 # Direção dos arquivos estáticos (CSS, JS)
 STATIC_URL = '/static/'
