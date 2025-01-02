@@ -107,16 +107,7 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-<<<<<<< HEAD
-=======
 
-# Direção dos arquivos estáticos (CSS, JS)
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
->>>>>>> 8de6a62 (quarta feira, ar)
 
 # Direção dos arquivos estáticos (CSS, JS)
 STATIC_URL = '/static/'
