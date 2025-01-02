@@ -1,29 +1,4 @@
-/*
-  Theme Name: Bentofolio - Bootstrap Personal Portfolio Template
-  Support: marveltheme@gmail.com
-  Description: Bentofolio - Bootstrap Personal Portfolio Template
-  Version: 1.0
-*/
 
-/* CSS Index
-============================
-01. Variable CSS
-02. Common CSS
-03. Header
-04. Home
-05. About
-06. Services
-07. Portfolio
-08. Blog
-09. Contact
-10. Footer
-11. Theme Control
-============================
-*/
-
-/*=============================
-	1. Google Fonts
-===============================*/
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap');
 
 /*=============================
